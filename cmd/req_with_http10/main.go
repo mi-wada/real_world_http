@@ -9,6 +9,7 @@ func main() {
 	client := http.DefaultClient
 	req, _ := http.NewRequest("GET", "http://localhost:18888", nil)
 	req.Proto = "HTTP/1.0"
+	req.Header.Set("User-Agent", "my-client")
 	res, err := client.Do(req)
 	if err != nil {
 		panic(err)
